@@ -6,7 +6,7 @@ export const ListInstagram = () => async (dispatch) => {
         type: INSTAGRAM_LIST_REQUEST
     });
     try {
-        const { data } = await axios.get('/api/instagrams');
+        const { data } = await axios.get('https://dnl-deco.herokuapp.com/api/instagrams');
         dispatch({
             type: INSTAGRAM_LIST_SUCCESS, payload: data 
         });

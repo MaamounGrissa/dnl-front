@@ -6,7 +6,7 @@ export const ListProducts = () => async (dispatch) => {
         type: PRODUCT_LIST_REQUEST
     });
     try {
-        const { data } = await axios.get('/api/products');
+        const { data } = await axios.get('https://dnl-deco.herokuapp.com/api/products');
         dispatch({
             type: PRODUCT_LIST_SUCCESS, payload: data 
         });
@@ -22,7 +22,7 @@ export const DetailsProduct = (productId) => async(dispatch) => {
         type: PRODUCT_DETAILS_REQUEST, payload: productId
     });
     try {
-        const { data } = await axios.get(`/api/products/${productId}`);
+        const { data } = await axios.get(`https://dnl-deco.herokuapp.com/api/products/${productId}`);
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS, payload: data
         });

@@ -6,7 +6,7 @@ export const ListSlider = () => async (dispatch) => {
         type: SLIDER_LIST_REQUEST
     });
     try {
-        const { data } = await axios.get('/api/sliders');
+        const { data } = await axios.get('https://dnl-deco.herokuapp.com/api/sliders');
         dispatch({
             type: SLIDER_LIST_SUCCESS, payload: data 
         });

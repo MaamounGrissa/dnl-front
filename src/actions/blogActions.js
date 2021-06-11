@@ -6,7 +6,7 @@ export const ListBlog = () => async (dispatch) => {
         type: BLOG_LIST_REQUEST
     });
     try {
-        const { data } = await axios.get('/api/blogs');
+        const { data } = await axios.get('https://dnl-deco.herokuapp.com/api/blogs');
         dispatch({
             type: BLOG_LIST_SUCCESS, payload: data 
         });
@@ -22,7 +22,7 @@ export const detailsBlog = (blogId) => async(dispatch) => {
         type: BLOG_DETAILS_REQUEST, payload: blogId
     });
     try {
-        const { data } = await axios.get(`/api/blogs/${blogId}`);
+        const { data } = await axios.get(`https://dnl-deco.herokuapp.com/api/blogs/${blogId}`);
         dispatch({
             type: BLOG_DETAILS_SUCCESS, payload: data
         });

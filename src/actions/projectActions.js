@@ -6,7 +6,7 @@ export const ListProjects = () => async (dispatch) => {
         type: PROJECT_LIST_REQUEST
     });
     try {
-        const { data } = await axios.get('/api/projects');
+        const { data } = await axios.get('https://dnl-deco.herokuapp.com/api/projects');
         dispatch({
             type: PROJECT_LIST_SUCCESS, payload: data 
         });
@@ -22,7 +22,7 @@ export const detailsProject = (projectId) => async(dispatch) => {
         type: PROJECT_DETAILS_REQUEST, payload: projectId
     });
     try {
-        const { data } = await axios.get(`/api/projects/${projectId}`);
+        const { data } = await axios.get(`https://dnl-deco.herokuapp.com/api/projects/${projectId}`);
         dispatch({
             type: PROJECT_DETAILS_SUCCESS, payload: data
         });
